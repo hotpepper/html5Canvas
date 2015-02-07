@@ -10,7 +10,7 @@
 			var c = document.querySelector("#c"); 
 			var ctx = c.getContext("2d");
 			//rectangle
-			ctx.strokeRect(50,50,150,150);
+			//ctx.strokeRect(50,50,150,150);
 			//or draw the lines for rectable
 			/*
 			ctx.beginPath();
@@ -22,18 +22,22 @@
 			ctx.stroke(); 
 			*/
 
-			ctx.beginPath();
+			/*ctx.beginPath();
 			ctx.moveTo(75,75);
 			ctx.lineTo(125,75);
 			ctx.lineTo(125,125);
 			ctx.lineTo(75,75);
-			ctx.fill(); 
+			ctx.fill(); */
 
 			var square = function(x,y) {
+				ctx.strokeStyle="darkblue";
 				ctx.strokeRect(x,y,x*2, y*2);
 				ctx.translate(10,10);
 				ctx.rotate(0.01);
-				ctx.strokeRect(x,y,x*3, y*3)
+
+				ctx.strokeRect(x,y,x*3, y*3);
+				
+				
 			}
 			for (var i=10; i<50;i++){
 				square(i,i);
