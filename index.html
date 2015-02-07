@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+	<body>
+		<canvas id="c" width="200"></canvas>
+		<script>
+			var c = document.querySelector("#c");
+			var ctx = c.getContext("2d");
+			var image = new Image()
+			image.onload = function(){
+				console.log("Loaded image");
+				ctx.drawImage(image, 0, 0, c.width, c.height);
+
+				//optional - auto opens in new window on load? 
+				//var savedImage = c.toDataURL();
+				//window.open(savedImage);
+
+				ctx.fillRect(100, 100, 100, 100);
+
+				ctx.strokeRect(50, 50, 50, 50);
+			}
+
+			image.src = "images/fry.jpg"
+
+		</script>
+	</body>
+</head>
+</html>
