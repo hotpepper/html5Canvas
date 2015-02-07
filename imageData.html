@@ -16,10 +16,20 @@ var canvas = document.querySelector("canvas");
             var paintGreen = function(imageData){
                 var numPixels = imageData.data.length;
                 for (var i=0; i<numPixels; i++) {
+                	var r = i;
+                	var g = i+1;
+                	var b = i+2;
+                	var a = i+3;
+                	imageData.data[r] = 127.5;
+                	imageData.data[g] = 127.5;
+                	imageData.data[b] = 127.5;
+                	imageData.data[a] = 127.5;
+/*
                     if (i%10 === 0){//check if 10th pixle
-                        imageData.data[i + 1] = 255;
-                        imageData.data[i + 3] = 255;
+                        imageData.data[i + 1] = 255;//green
+                        imageData.data[i + 3] = 255;//alpha 
                     }
+                    */
 
                 }
                 ctx.putImageData(imageData, 0, 0);
