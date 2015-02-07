@@ -28,6 +28,17 @@
 			ctx.lineTo(125,125);
 			ctx.lineTo(75,75);
 			ctx.fill(); 
+
+			var square = function(x,y) {
+				ctx.strokeRect(x,y,x*2, y*2);
+				ctx.translate(10,10);
+				ctx.rotate(0.01);
+				ctx.strokeRect(x,y,x*3, y*3)
+			}
+			for (var i=10; i<50;i++){
+				square(i,i);
+			}
+			//square(10,10);
 		</script>
 
 	</body>
