@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<canvas id="myCanvas" width="500" height="500">
+</canvas>
+
+<script>
+var canvas = document.querySelector("canvas");
+            var ctx = canvas.getContext("2d");
+
+            var pix = ctx.getImageData(0,0,500,500);
+
+            var paintGreen = function(imageData){
+                var numPixels = imageData.data.length;
+                for (var i=0; i<numPixels; i++) {
+                    if (i%10 === 0){//check if 10th pixle
+                        imageData.data[i + 1] = 255;
+                        imageData.data[i + 3] = 255;
+                    }
+
+                }
+                ctx.putImageData(imageData, 0, 0);
+            }
+            paintGreen(pix);
+</script>
+
+</body>
+</html>
