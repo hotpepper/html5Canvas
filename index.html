@@ -3,36 +3,24 @@
 <html>
 <head>
 	<body>
-		<canvas id="c" width="200"></canvas>
+		<canvas id="c" width="500" height="500"></canvas>
 		<script>
 			var c = document.querySelector("#c");
 			var ctx = c.getContext("2d");
 			var image = new Image()
 			image.onload = function(){
 				console.log("Loaded image");
-				ctx.drawImage(image, 0, 0, c.width, c.height);
+				ctx.drawImage(image, 0, 0, image.width, image.height);
 
 				//optional - auto opens in new window on load? 
 				//var savedImage = c.toDataURL();
 				//window.open(savedImage);
+				ctx.font = "bold 36px sans-serif";
+				ctx.fillStyle = "white"
+				ctx.fillText("Canvas Memes!", 30, 30);
+				ctx.strokeStyle = "3px";
+				ctx.strokeText("Canvas Memes!", 30, 30);
 
-				ctx.fillStyle = "blue";
-				// Start at (0,0) and draw a 50px x 50px blue rectangle.
-				ctx.fillRect(0,0,50,50);
-				// Start at (0,0) and clear a 25px x 25px rectangle.
-				ctx.clearRect(0,0,25,25);
-
-				//building paths
-				ctx.beginPath();
-				//start point
-				ctx.moveTo(10,10);
-				//draw line
-				ctx.lineTo(50, 50);
-				ctx.lineTo(50,10);
-				ctx.lineTo(10,10);
-				//displays line
-				ctx.stroke();
-				//ctx.fill();
 			}
 
 			image.src = "images/fry.jpg"

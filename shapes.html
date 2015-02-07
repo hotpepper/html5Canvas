@@ -28,14 +28,18 @@
 			ctx.lineTo(125,125);
 			ctx.lineTo(75,75);
 			ctx.fill(); */
+			ctx.font = "bold 19px sans-serif";
+			ctx.fillText("Hello", 400, 50);
 
 			var square = function(x,y) {
 				ctx.strokeStyle="darkblue";
+				ctx.strokeText("what the fuck", x+50, y-10);
 				ctx.strokeRect(x,y,x*2, y*2);
 				ctx.translate(10,10);
 				ctx.rotate(0.01);
 
-				ctx.strokeRect(x,y,x*3, y*3);
+				ctx.fillStyle = "grey";
+				ctx.fillRect(x,y,x*3, y*3);
 				
 				
 			}
@@ -43,6 +47,7 @@
 				square(i,i);
 			}
 			//square(10,10);
+
 		</script>
 
 	</body>
